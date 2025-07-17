@@ -16,9 +16,13 @@ http.interceptors.request.use(
     const token = getToken();
     // config.headers.Authorization = {
     //   ...config.headers,
-    //   Authorization: `Bearer ${token ? token : ''}`,
+    //   Authorization: `Bearer ${token ? token : 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODRiZjNjZjBlYmI4YWVkM2E1OTY5MTIiLCJpYXQiOjE3NTI2NDMwNTV9.afA5b9oq0puAEs_BZodyp-vFEK0TVFoKNWYmezG2mOc'}`,
     // };
-    config.headers.Authorization = `Bearer ${token ? token : ''}`;
+    config.headers.Authorization = `Bearer ${
+      token
+        ? token
+        : 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODRiZjNjZjBlYmI4YWVkM2E1OTY5MTIiLCJpYXQiOjE3NTI2NDMwNTV9.afA5b9oq0puAEs_BZodyp-vFEK0TVFoKNWYmezG2mOc'
+    }`;
     return config;
   },
   (error) => {

@@ -22,7 +22,8 @@ import { fetchBestSellerGroceryProducts } from '@framework/product/get-all-best-
 import { fetchPopularProducts } from '@framework/product/get-all-popular-products';
 import { LIMITS } from '@framework/utils/limits';
 
-export default function Home() {
+export default function Home(props: any) {
+  console.log('Home page props:', props);
   return (
     <>
       <Seo
@@ -68,7 +69,7 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
   );
   await queryClient.prefetchQuery(
     [
-      API_ENDPOINTS.BEST_SELLER_GROCERY_PRODUCTS,
+      API_ENDPOINTS.POPULAR_PRODUCTS,
       { limit: LIMITS.BEST_SELLER_GROCERY_PRODUCTS_LIMITS },
     ],
     fetchBestSellerGroceryProducts

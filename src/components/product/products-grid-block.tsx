@@ -24,7 +24,7 @@ const ProductsGridBlock: React.FC<ProductsProps> = ({
   sectionSubHeading,
   headingPosition = 'center',
   className = 'mb-12 lg:mb-14 xl:mb-16',
-  products,
+  products = [],
   loading,
   error,
   limit,
@@ -61,7 +61,7 @@ const ProductsGridBlock: React.FC<ProductsProps> = ({
             />
           ))
         ) : (
-          products?.map((product: any) =>
+          (Array.isArray(products) ? products : []).map((product: any) =>
             variant === 'oak' ? (
               <ProductCardOak
                 key={`${uniqueKey}-${product.id}`}

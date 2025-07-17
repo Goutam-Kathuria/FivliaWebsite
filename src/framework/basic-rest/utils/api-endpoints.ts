@@ -1,30 +1,54 @@
 export const API_ENDPOINTS = {
-  LOGIN: '/login',
-  REGISTER: '/register',
-  LOGOUT: '/logout',
-  FORGET_PASSWORD: '/forget-password',
-  CATEGORIES: '/categories.json',
-  DIETARY: '/dietary.json',
-  BRANDS: '/brands.json',
-  PRODUCTS: '/products.json',
-  PRODUCT: '/product.json',
-  RELATED_PRODUCTS: '/related_products.json',
-  FLASH_SELL_PRODUCTS: '/products_flash_sell.json',
-  BEST_SELLER_PRODUCTS: '/products_best_seller.json',
-  BEST_SELLER_GROCERY_PRODUCTS: '/products_best_seller_grocery.json',
-  POPULAR_PRODUCTS: '/products_popular.json',
-  COOKIES_PRODUCTS: '/products_cookies.json',
-  CHIPS_PRODUCTS: '/products_chips.json',
-  POPCORN_JERKY_PRODUCTS: '/products_popcorn_jerky.json',
-  FRESH_VEGETABLES_PRODUCTS: '/products_fresh_vegetables.json',
-  SEARCH: '/search.json',
-  ORDERS: '/orders.json',
-  ORDER: '/order.json',
-  ORDER_STATUS: '/order-status.json',
-  ADDRESS: '/address.json',
-  PAYMENT: '/payment.json',
-  CONTACT: '/contact.json',
+  // Product Endpoints
+  PRODUCTS: '/getProducts', // GET all products (token required)
+  PRODUCT: '/getProduct', // GET single product (needs :id)
+  FEATURED_PRODUCTS: '/getFeatureProduct', // GET featured products (token required)
+  POPULAR_PRODUCTS: '/bestSelling', // GET best selling products (token required)
+  SEARCH: '/search', // GET search products (token required)
+  PRODUCT_VARIANTS: '/getVarients', // GET product variants (needs :id)
+  RELATED_PRODUCTS: '/relatedProduct', // GET related products (token required, needs :productId)
+  BEST_SELLER_PRODUCTS: '/bestSelling',
+  BEST_SELLER_GROCERY_PRODUCTS: '/bestSelling',
+  CHIPS_PRODUCTS: '/chip-products.json',
+  COOKIES_PRODUCTS: '/cookies-products.json',
+  FLASH_SELL_PRODUCTS: '/flash-sell-products.json',
+  FRESH_VEGETABLES_PRODUCTS: '/fresh-vegetables-products.json',
+  POPCORN_JERKY_PRODUCTS: '/popcorn-jerky-products.json',
+  WISHLIST: '/wishlist.json',
+
+  // Category Endpoints
+  SUBCATEGORIES: '/GetSubCategories', // GET subcategories (needs :categoryId)
+  SUBSUBCATEGORIES: '/GetSubSubCategories', // GET sub-subcategories (needs :subcatId)
+  CATEGORIES: '/getMainCategory',
+
+  // Brand Endpoints
+  BRANDS: '/getBrand', // GET all brands
+  ADD_BRAND: '/brand', // POST add brand (upload)
+
+  // Shop Endpoints
   SHOP: '/shop.json',
   SHOPS: '/shops.json',
-  WISHLIST: '/wishlist.json',
+
+  // Address & Contact Endpoints
+  ADDRESS: '/address.json',
+  CONTACT: '/contact.json',
+
+  // Order Endpoints
+  ORDER: '/order.json',
+  ORDER_STATUS: '/order-status.json',
+  ORDERS: '/orders',
+
+  // Payment Endpoints
+  PAYMENT: '/payment.json',
+
+  // Banner Endpoints
+  BANNERS: '/getBanner', // GET banners (token required)
+  ALL_BANNERS: '/getAllBanner', // GET all banners
+
+  // Auth Endpoints
+  LOGIN: '/signin',
+  REGISTER: '/signin',
+  LOGOUT: '/logout',
+  FORGET_PASSWORD: '/forget-password',
+  DIETARY: '/dietary',
 };

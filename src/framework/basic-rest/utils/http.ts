@@ -18,11 +18,11 @@ http.interceptors.request.use(
     //   ...config.headers,
     //   Authorization: `Bearer ${token ? token : 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODRiZjNjZjBlYmI4YWVkM2E1OTY5MTIiLCJpYXQiOjE3NTI2NDMwNTV9.afA5b9oq0puAEs_BZodyp-vFEK0TVFoKNWYmezG2mOc'}`,
     // };
-    config.headers.Authorization = `Bearer ${
-      token
-        ? token
-        : 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODYyN2I3OTAyYzgxOGFiOTlkZGMyM2QiLCJpYXQiOjE3NTI4MTIxOTF9.l5JZv3_qMUbPto-HRVG-m2Evjg75RKSWSUULQDW5Tqg'
-    }`;
+    // config.headers.Authorization = `Bearer ${
+    //   token
+    //     ? token
+    //     : 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODYyN2I3OTAyYzgxOGFiOTlkZGMyM2QiLCJpYXQiOjE3NTI4MTIxOTF9.l5JZv3_qMUbPto-HRVG-m2Evjg75RKSWSUULQDW5Tqg'
+    // }`;
     return config;
   },
   (error) => {

@@ -1,14 +1,17 @@
+let lat = 28.7041;
+let lng = 77.1025;
+
 export const API_ENDPOINTS = {
   // Product Endpoints
   PRODUCTS: '/getProducts', // GET all products (token required)
   PRODUCT: '/getProduct', // GET single product (needs :id)
   FEATURED_PRODUCTS: '/getFeatureProduct', // GET featured products (token required)
-  POPULAR_PRODUCTS: '/bestSelling', // GET best selling products (token required)
+  POPULAR_PRODUCTS: `/website/bestSelling?lat=29.1553958&lng=75.7218976`, // GET best selling products (token required)
   SEARCH: '/search', // GET search products (token required)
   PRODUCT_VARIANTS: '/getVarients', // GET product variants (needs :id)
   RELATED_PRODUCTS: '/relatedProduct', // GET related products (token required, needs :productId)
-  BEST_SELLER_PRODUCTS: '/bestSelling',
-  BEST_SELLER_GROCERY_PRODUCTS: '/bestSelling',
+  BEST_SELLER_PRODUCTS: `/website/bestSelling?lat=29.1553958&lng=75.7218976`,
+  BEST_SELLER_GROCERY_PRODUCTS: `/website/bestSelling?lat=29.1553958&lng=75.7218976`,
   CHIPS_PRODUCTS: '/chip-products.json',
   COOKIES_PRODUCTS: '/cookies-products.json',
   FLASH_SELL_PRODUCTS: '/flash-sell-products.json',

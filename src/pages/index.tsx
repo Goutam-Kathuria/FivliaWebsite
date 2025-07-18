@@ -23,7 +23,6 @@ import { fetchPopularProducts } from '@framework/product/get-all-popular-product
 import { LIMITS } from '@framework/utils/limits';
 
 export default function Home(props: any) {
-  console.log('Home page props:', props);
   return (
     <>
       <Seo

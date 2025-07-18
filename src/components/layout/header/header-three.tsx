@@ -9,7 +9,6 @@ import { useActiveScroll } from '@utils/use-active-scroll';
 import Container from '@components/ui/container';
 import Logo from '@components/ui/logo';
 import HeaderMenu from '@components/layout/header/header-menu';
-import LanguageSwitcher from '@components/ui/language-switcher';
 import UserIcon from '@components/icons/user-icon';
 import MenuIcon from '@components/icons/menu-icon';
 import useOnClickOutside from '@utils/use-click-outside';
@@ -102,9 +101,6 @@ const Header: React.FC = () => {
               <SearchIcon className="w-[22px] h-[22px] text-brand-dark text-opacity-40 ltr:-ml-2 rtl:-mr-2" />
             </button>
             {/* End of search handler btn */}
-            <div className="xl:mx-3.5 mx-2.5">
-              <LanguageSwitcher />
-            </div>
             <CartButton className="hidden lg:flex xl:mx-3.5 mx-2.5" />
             <div className="items-center hidden lg:flex shrink-0 xl:mx-3.5 mx-2.5">
               <UserIcon className="text-brand-dark text-opacity-40" />

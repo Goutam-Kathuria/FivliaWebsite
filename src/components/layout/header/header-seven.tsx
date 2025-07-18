@@ -10,7 +10,6 @@ import Logo from '@components/ui/logo';
 import UserIcon from '@components/icons/user-icon';
 import MenuIcon from '@components/icons/menu-icon';
 import HeaderMenu from '@components/layout/header/header-menu';
-import LanguageSwitcher from '@components/ui/language-switcher';
 import { useModalAction } from '@components/common/modal/modal.context';
 import cn from 'classnames';
 import Search from '@components/common/search';
@@ -70,9 +69,6 @@ const Header: React.FC = () => {
           />
           {/* End of search */}
           <div className="flex shrink-0 -mx-2.5 xl:-mx-3.5">
-            <div className="xl:mx-3.5 mx-2.5">
-              <LanguageSwitcher />
-            </div>
             <CartButton className="hidden lg:flex 2xl:hidden xl:mx-3.5 mx-2.5" />
             <div className="items-center hidden lg:flex shrink-0 xl:mx-3.5 mx-2.5">
               <UserIcon className="text-brand-dark text-opacity-40" />

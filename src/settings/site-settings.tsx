@@ -7,7 +7,7 @@ import { ESFlag } from '@components/icons/language/ESFlag';
 import siteLogo from 'public/assets/images/logo.svg';
 
 export const siteSettings = {
-  name: 'Fivila',
+  name: 'FIVLIA',
   description:
     'Fastest E-commerce template built with React, NextJS, TypeScript, React-Query and Tailwind CSS.',
   author: {
@@ -16,8 +16,7 @@ export const siteSettings = {
     address: '',
   },
   logo: {
-    url: siteLogo,
-    alt: 'BoroBazar',
+    alt: 'FIVLIA',
     href: '/',
     width: 128,
     height: 30,
@@ -215,66 +214,6 @@ export const siteSettings = {
             label: 'menu-404',
           },
         ],
-      },
-    ],
-    languageMenu: [
-      {
-        id: 'ar',
-        name: 'عربى - AR',
-        value: 'ar',
-        icon: <SAFlag />,
-      },
-      {
-        id: 'zh',
-        name: '中国人 - ZH',
-        value: 'zh',
-        icon: <CNFlag />,
-      },
-      {
-        id: 'en',
-        name: 'English - EN',
-        value: 'en',
-        icon: <USFlag />,
-      },
-      {
-        id: 'de',
-        name: 'Deutsch - DE',
-        value: 'de',
-        icon: <DEFlag />,
-      },
-      {
-        id: 'he',
-        name: 'rעברית - HE',
-        value: 'he',
-        icon: <ILFlag />,
-      },
-      {
-        id: 'es',
-        name: 'Español - ES',
-        value: 'es',
-        icon: <ESFlag />,
-      },
-    ],
-    pagesMenu: [
-      {
-        id: 1,
-        path: '/search',
-        label: 'menu-best-deals',
-      },
-      {
-        id: 2,
-        path: '/about-us',
-        label: 'menu-about-us',
-      },
-      {
-        id: 3,
-        path: '/contact-us',
-        label: 'menu-contact-us',
-      },
-      {
-        id: 4,
-        path: '/faq',
-        label: 'menu-faq',
       },
     ],
   },

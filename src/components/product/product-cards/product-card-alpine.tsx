@@ -9,6 +9,7 @@ import { useCart } from '@contexts/cart/cart.context';
 import { useTranslation } from 'next-i18next';
 import { productPlaceholder } from '@assets/placeholders';
 import dynamic from 'next/dynamic';
+import { useEffect, useState } from 'react';
 const AddToCart = dynamic(() => import('@components/product/add-to-cart'), {
   ssr: false,
 });
@@ -18,8 +19,13 @@ interface ProductProps {
   className?: string;
 }
 function RenderPopupOrAddToCart({ props }: { props: Object }) {
+  const [isHydrated, setIsHydrated] = useState(false);
+
+  useEffect(() => {
+    setIsHydrated(true);
+  }, []);
+
   let { data }: any = props;
-  // console.log(variant);
   const { t } = useTranslation('common');
   const { id, quantity, product_type } = data ?? {};
   const { width } = useWindowSize();
@@ -27,9 +33,16 @@ function RenderPopupOrAddToCart({ props }: { props: Object }) {
   const { isInCart, isInStock } = useCart();
   const iconSize = width! > 1024 ? '19' : '17';
   const outOfStock = isInCart(id) && !isInStock(id);
+
   function handlePopupView() {
     openModal('PRODUCT_VIEW', data);
   }
+
+  if (!isHydrated) {
+    // Render a placeholder or nothing until client-side hydration
+    return null;
+  }
+
   if (Number(quantity) < 1 || outOfStock) {
     return (
       <span className="text-[11px] md:text-xs font-bold text-brand-light uppercase inline-block bg-brand-danger rounded-full px-2.5 pt-1 pb-[3px] mx-0.5 sm:mx-1">

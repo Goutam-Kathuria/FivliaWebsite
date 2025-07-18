@@ -17,11 +17,9 @@ const Logo: React.FC<React.AnchorHTMLAttributes<{}>> = ({
       )}
       {...props}
     >
-      <Image
-        src={siteSettings.logo.url}
-        alt={siteSettings.logo.alt}
-        loading="eager"
-      />
+      <span className="text-2xl md:text-3xl font-bold text-green-800 hover:text-brand transition-colors duration-200">
+        {siteSettings.name}
+      </span>
     </Link>
   );
 };

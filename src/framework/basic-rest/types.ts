@@ -77,24 +77,37 @@ export type Tag = {
   slug: string;
 };
 export type Product = {
-  id: number | string;
-  name: string;
-  slug: string;
-  price: number;
-  quantity: number;
-  sold: number;
-  unit: string;
+  _id: string;
+  productName: string;
+  // Only one description field
+  description: string;
+  // Only one sku field
+  sku: string;
+  productImageUrl: string[];
+  productThumbnailUrl: string;
+  category: { _id: string; name: string }[];
+  subCategory: { _id: string; name: string }[];
+  brand_Name: { _id: string; name: string };
+  location: {
+    city: { _id: string; name: string }[];
+    zone: { _id: string; name: string }[];
+    _id: string;
+  }[];
+  // legacy/compat fields for UI
+  id?: string | number;
+  name?: string;
+  slug?: string;
+  image?: { original: string; thumbnail: string };
+  price?: number;
+  basePrice?: number;
+  unit?: string;
+  brand?: string;
   sale_price?: number;
   min_price?: number;
   max_price?: number;
-  image: Attachment;
-  sku?: string;
-  gallery?: Attachment[];
-  category?: Category;
-  tag?: Tag[];
+  gallery?: any[];
+  tag?: any[];
   meta?: any[];
-  brand?: Brand;
-  description?: string;
   variations?: object;
   [key: string]: unknown;
 };

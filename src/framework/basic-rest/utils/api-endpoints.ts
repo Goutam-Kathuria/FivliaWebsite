@@ -1,15 +1,17 @@
-let lat = 28.7041;
-let lng = 77.1025;
-
 export const API_ENDPOINTS = {
-  // Product Endpoints
-  PRODUCTS: '/getProducts', // GET all products (token required)
-  PRODUCT: '/getProduct', // GET single product (needs :id)
-  FEATURED_PRODUCTS: '/getFeatureProduct', // GET featured products (token required)
-  POPULAR_PRODUCTS: `/website/bestSelling?lat=29.1553958&lng=75.7218976`, // GET best selling products (token required)
-  SEARCH: '/search', // GET search products (token required)
-  PRODUCT_VARIANTS: '/getVarients', // GET product variants (needs :id)
-  RELATED_PRODUCTS: '/relatedProduct', // GET related products (token required, needs :productId)
+
+  PRODUCTS: '/website/getProduct?lat=29.1553958&lng=75.7218976',
+  PRODUCT: (id: string | number) => `/website/getProduct?lat=29.1553958&lng=75.7218976&id=${id}`,
+  FEATURED_PRODUCTS: '/website/featureProduct?lat=29.1553958&lng=75.7218976',
+
+  POPULAR_PRODUCTS: `/website/bestSelling?lat=29.1553958&lng=75.7218976`, 
+  
+  SEARCH: '/website/searchProduct?lat=29.1553958&lng=75.7218976', 
+  
+  PRODUCT_VARIANTS: '/getVarients', 
+  
+  RELATED_PRODUCTS: '/website/relatedProducts?lat=29.1553958&lng=75.7218976',
+  
   BEST_SELLER_PRODUCTS: `/website/bestSelling?lat=29.1553958&lng=75.7218976`,
   BEST_SELLER_GROCERY_PRODUCTS: `/website/bestSelling?lat=29.1553958&lng=75.7218976`,
   CHIPS_PRODUCTS: '/chip-products.json',
@@ -19,36 +21,36 @@ export const API_ENDPOINTS = {
   POPCORN_JERKY_PRODUCTS: '/popcorn-jerky-products.json',
   WISHLIST: '/wishlist.json',
 
-  // Category Endpoints
-  SUBCATEGORIES: '/GetSubCategories', // GET subcategories (needs :categoryId)
-  SUBSUBCATEGORIES: '/GetSubSubCategories', // GET sub-subcategories (needs :subcatId)
+  
+  SUBCATEGORIES: '/GetSubCategories',
+  SUBSUBCATEGORIES: '/GetSubSubCategories', 
   CATEGORIES: '/getMainCategory',
 
-  // Brand Endpoints
-  BRANDS: '/getBrand', // GET all brands
-  ADD_BRAND: '/brand', // POST add brand (upload)
 
-  // Shop Endpoints
+  BRANDS: '/getBrand',
+  ADD_BRAND: '/brand',
+  
+
   SHOP: '/shop.json',
   SHOPS: '/shops.json',
 
-  // Address & Contact Endpoints
+
   ADDRESS: '/address.json',
   CONTACT: '/contact.json',
 
-  // Order Endpoints
+
   ORDER: '/order.json',
   ORDER_STATUS: '/order-status.json',
   ORDERS: '/orders',
 
-  // Payment Endpoints
+
   PAYMENT: '/payment.json',
 
-  // Banner Endpoints
-  BANNERS: '/getBanner', // GET banners (token required)
-  ALL_BANNERS: '/getAllBanner', // GET all banners
 
-  // Auth Endpoints
+  BANNERS: '/getBanner',
+  ALL_BANNERS: '/getAllBanner',
+
+
   LOGIN: '/signin',
   REGISTER: '/signin',
   LOGOUT: '/logout',

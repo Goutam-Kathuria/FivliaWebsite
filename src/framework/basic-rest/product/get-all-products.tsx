@@ -9,10 +9,12 @@ type PaginatedProduct = {
 };
 const fetchProducts = async ({ queryKey }: any) => {
   const [_key, _params] = queryKey;
-  const { data } = await http.get(API_ENDPOINTS.PRODUCTS);
+  let url = API_ENDPOINTS.PRODUCT(_params.category._id);
+
+  const { data } = await http.get(url);
   // Map API products to expected shape
-  const products = (data || []).map((prod: any) => ({
-    ...prod, // Spread first, so explicit mappings below take precedence
+  const products = (data.products || []).map((prod: any) => ({
+    ...prod,
     id: prod._id || prod.id,
     name: prod.productName || prod.name,
     slug:
